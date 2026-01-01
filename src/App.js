@@ -28,7 +28,7 @@ const App = () => {
           }
         />
 
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<div>lỗi</div>} />
       </Routes>
     </BrowserRouter>
   );

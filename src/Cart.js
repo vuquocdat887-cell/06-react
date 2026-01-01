@@ -7,21 +7,21 @@ const Cart = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const ids = JSON.parse(localStorage.getItem("carts")) || [];
-        const data = [];
-        for (const n of ids) {
-          const resolve = await axios.get(
-            `https://fakestoreapi.com/products/${n}`
-          );
-          data.push(resolve.data);
-        }
+      try{const ids = JSON.parse(localStorage.getItem("carts")) || [];
+      const data = [];
+      for (const n of ids) {
+        const resolve = await axios.get(
+          `https://fakestoreapi.com/products/${n}`
+        );
+        data.push(resolve.data);
+      }
 
-        setProducts(data);
-        setTotal(data.reduce((a, p) => p.price + a, 0));
-      } catch (e) {
+      setProducts(data);
+      setTotal(data.reduce((a, p) => p.price + a, 0));}
+      catch(e){
         console.log(e);
       }
+      
     };
 
     fetchData();
